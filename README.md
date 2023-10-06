@@ -16,3 +16,10 @@
 ## Replace file
 1. Replace "iLBC_encoder.c", "iLBC_decoder.c" and "iLBC_define.h" under "pjproject-2.13.1/third_party/ilbc" with the code we provide.
 2. Move "sharedBuffer.c" and "sharedBuffer.h" under "pjproject-2.13.1/third_party/ilbc".
+
+## Run
+- The sender program will read a file named "secret" that you want to send when calling. (iLBC frame size should be set to 30ms.)
+- Each packet will contain a byte of "secret".
+- The ideal information hiding capacity is 266bps.
+- The receiver program will create a "message" file to store the data it extract from bitstream.
+- The file "index" store the index of the secret currenctly sending, to handle the problem if call stopped before the transfer is over.
